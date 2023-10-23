@@ -1,11 +1,11 @@
-# larke-admin通用后台管理系统
+# larke-admin 后台管理系统的 SM2 驱动
 
-基于 `lake/larke-jwt` 的 SM2 驱动
+larke-admin 后台管理系统 JWT 的 SM2 驱动
 
 
 ## 项目介绍
 
-*  基于 `lake/larke-jwt` 的 SM2 驱动
+*  基于 `lpilp/guomi` 的 `larke-admin` 的 SM2 驱动
 *  使用 `SM2` 作为验证驱动, 满足国内要求
 
 
