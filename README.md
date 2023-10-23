@@ -1,4 +1,4 @@
-# larke-admin 后台管理系统的 SM2 驱动
+# JWt SM2 驱动
 
 larke-admin 后台管理系统 JWT 的 SM2 驱动
 
