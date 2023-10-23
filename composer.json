@@ -1,0 +1,39 @@
+{
+    "name": "lake/larke-jwt-sm2",
+    "description": "An JWT Signer library with SM2.",
+    "keywords": [
+        "laravel",
+        "lake",
+        "larke",
+        "admin",
+        "larke-jwt",
+        "sm2"
+    ],
+    "homepage": "https://github.com/deatil/larke-jwt-sm2",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "deatil",
+            "email": "deatil@github.com",
+            "homepage": "https://github.com/deatil",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "lake/larke-admin": "^1.6",
+        "lpilp/guomi": "1.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Larke\\JwtSM2\\": "src"
+        }
+    },
+    "extra" : {
+        "laravel" : {
+            "providers" : [
+                "Larke\\JwtSM2\\ServiceProvider"
+            ]
+        }
+    }
+}
