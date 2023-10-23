@@ -1,4 +1,4 @@
-# JWt SM2 驱动
+# JWT SM2 驱动
 
 larke-admin 后台管理系统 JWT 的 SM2 驱动
 
@@ -6,7 +6,7 @@ larke-admin 后台管理系统 JWT 的 SM2 驱动
 ## 项目介绍
 
 *  基于 `lpilp/guomi` 的 `larke-admin` 的 SM2 驱动
-*  使用 `SM2` 作为验证驱动, 满足国内要求
+*  使用 `SM2` 作为 JWT 验证驱动, 满足国内要求
 
 
 ## 环境要求
@@ -30,7 +30,8 @@ larkeadmin.jwt.signer.private_key = 'sm2/path/prihex.file'
 larkeadmin.jwt.signer.public_key = 'sm2/path/pubhex.file'
 ```
 
-sm2 使用 hex 编码的明文私钥和公钥，文件内也就填入 hex 编码的明文私钥和公钥
+sm2 使用 hex 编码的明文私钥和公钥，文件内也就填入 hex 编码的明文私钥和公钥。
+密钥可查看 `docs/key` 文件夹 
 
 
 ## 开源协议
