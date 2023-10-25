@@ -1,12 +1,14 @@
 # JWT SM2 驱动
 
-larke-admin 后台管理系统 JWT 的 SM2 驱动
+larke-admin 后台管理系统 JWT 的 SM2/SM3 驱动
 
 
 ## 项目介绍
 
 *  基于 `lpilp/guomi` 的 `larke-admin` 的 SM2 驱动
-*  使用 `SM2` 作为 JWT 验证驱动, 满足国内要求
+*  使用 `SM2` 和 `SM3` 作为 JWT 验证驱动, 满足国内要求
+*  JWT 配置标识为 `GmSM2` 和 `GmSM3`
+*  使用 `SM3` 需要 `openssl` 支持 `SM3` 版本
 
 
 ## 环境要求
@@ -28,6 +30,11 @@ composer require lake/larke-jwt-sm2
 larkeadmin.jwt.signer.algorithm = 'GmSM2'
 larkeadmin.jwt.signer.private_key = 'sm2/path/prihex.file'
 larkeadmin.jwt.signer.public_key = 'sm2/path/pubhex.file'
+```
+和
+```php
+larkeadmin.jwt.signer.algorithm = 'GmSM3'
+larkeadmin.jwt.signer.secrect = base64_encode("123123")
 ```
 
 sm2 使用 hex 编码的明文私钥和公钥，文件内也就填入 hex 编码的明文私钥和公钥。

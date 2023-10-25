@@ -1,6 +1,6 @@
 {
     "name": "lake/larke-jwt-sm2",
-    "description": "An JWT Signer library with SM2.",
+    "description": "A JWT Signer library with SM2.",
     "keywords": [
         "laravel",
         "lake",
