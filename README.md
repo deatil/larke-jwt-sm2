@@ -37,7 +37,8 @@ larkeadmin.jwt.signer.algorithm = 'GmSM3'
 larkeadmin.jwt.signer.secrect = base64_encode("123123")
 ```
 
-sm2 使用 hex 编码的明文私钥和公钥，文件内也就填入 hex 编码的明文私钥和公钥。
+SM2 字符时使用 HEX 编码的明文私钥和公钥。
+使用文件时使用 PKCS1 的编码 SM2 公钥和私钥。
 密钥可查看 `docs/key` 文件夹 
 
 

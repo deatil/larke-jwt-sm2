@@ -6,8 +6,9 @@ namespace Larke\JwtSM2\Admin\Signer;
 
 use Illuminate\Support\Collection;
 
+use Rtgm\util\MyAsn1;
+
 use Larke\JWT\Signer\Key\InMemory;
-use Larke\JWT\Signer\Key\LocalFileReference;
 use Larke\JWT\Contracts\Key as KeyContract;
 use Larke\JWT\Contracts\Signer as SignerContract;
 
@@ -65,7 +66,9 @@ class SM2 implements Signer
         $privateKey = $this->config->get("private_key");
         
         if (file_exists($privateKey)) {
-            $secrect = LocalFileReference::file($privateKey);
+            $der = MyAsn1::decode_file($privateKey);
+            
+            $secrect = InMemory::plainText($der[1] ?: '');
         } else {
             $secrect = InMemory::plainText($privateKey);
         }
@@ -83,7 +86,9 @@ class SM2 implements Signer
         $publicKey = $this->config->get("public_key");
 
         if (file_exists($publicKey)) {
-            $secrect = LocalFileReference::file($publicKey);
+            $der = MyAsn1::decode_file($publicKey);
+            
+            $secrect = InMemory::plainText($der[1] ?: '');
         } else {
             $secrect = InMemory::plainText($publicKey);
         }
