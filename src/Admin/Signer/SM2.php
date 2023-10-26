@@ -4,6 +4,7 @@ declare (strict_types = 1);
 
 namespace Larke\JwtSM2\Admin\Signer;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 
 use Rtgm\util\MyAsn1;
@@ -66,7 +67,13 @@ class SM2 implements Signer
         $privateKey = $this->config->get("private_key");
         
         if (file_exists($privateKey)) {
-            $der = MyAsn1::decode_file($privateKey);
+            $data = file_get_contents($privateKey);
+            if ($this->isPKCS8Key($data)) {
+                $der = MyAsn1::decode_file($privateKey);
+                $der = MyAsn1::decode($der[2] ?? '', 'hex');
+            } else {
+                $der = MyAsn1::decode_file($privateKey);
+            }
             
             $secrect = InMemory::plainText($der[1] ?: '');
         } else {
@@ -94,5 +101,10 @@ class SM2 implements Signer
         }
         
         return $secrect;
+    }
+    
+    private function isPKCS8Key(string $key): bool
+    {
+        return Str::contains($key, '-----BEGIN PRIVATE KEY-----', true);
     }
 }

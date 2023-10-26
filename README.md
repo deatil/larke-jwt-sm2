@@ -38,7 +38,7 @@ larkeadmin.jwt.signer.secrect = base64_encode("123123")
 ```
 
 SM2 字符时使用 HEX 编码的明文私钥和公钥。
-使用文件时使用 PKCS1 的编码 SM2 公钥和私钥。
+使用文件时可使用 PKCS1 和 PKCS8 编码的 SM2 私钥，公钥默认只有一种类型。
 密钥可查看 `docs/key` 文件夹 
 
 
