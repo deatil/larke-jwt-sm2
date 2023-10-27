@@ -1,6 +1,6 @@
 {
     "name": "lake/larke-jwt-sm2",
-    "description": "A JWT Signer library with SM2.",
+    "description": "A JWT Signer library with SM2 and SM3.",
     "keywords": [
         "laravel",
         "lake",
@@ -21,7 +21,7 @@
         }
     ],
     "require": {
-        "lake/larke-admin": "^1.6",
+        "lake/larke-jwt": "^1.2",
         "lpilp/guomi": "1.0.*"
     },
     "autoload": {

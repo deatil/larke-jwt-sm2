@@ -18,9 +18,11 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function boot()
     {
-        // 添加驱动
-        Signer::addSigningMethod('GmSM2', SM2::class);
-        Signer::addSigningMethod('GmSM3', HmacSM3::class);
+        if (class_exists('Larke\\Admin\\Jwt\\Signer')) {
+            // 添加驱动
+            Signer::addSigningMethod('GmSM2', SM2::class);
+            Signer::addSigningMethod('GmSM3', HmacSM3::class);
+        }
     }
     
 }
