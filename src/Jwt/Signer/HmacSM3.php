@@ -21,7 +21,7 @@ final class HmacSM3 extends BaseSigner
     
     public function createHash(string $payload, Key $key): string
     {
-        return HSSM3::hmac($key->getContent(), $payload, 'sm3');
+        return HSSM3::hmac($key->getContent(), $payload, 'sm3', true);
     }
 
     public function doVerify(string $expected, string $payload, Key $key): bool

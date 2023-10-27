@@ -32,7 +32,7 @@ final class SM2 extends BaseSigner
             
             return hex2bin($signed);
         } catch (Exception $e) {
-            throw new InvalidKeyProvided("JwtSM2 Create error: " . $e->getMessage(), 0, $sodiumException);
+            throw new InvalidKeyProvided("JwtSM2 Create error: " . $e->getMessage(), 0, $e);
         }
     }
 
@@ -45,7 +45,7 @@ final class SM2 extends BaseSigner
 
             return $sm2->verifySign($payload, $expected, $key->getContent());
         } catch (Exception $e) {
-            throw new InvalidKeyProvided("JwtSM2 Verify error: " . $e->getMessage(), 0, $sodiumException);
+            throw new InvalidKeyProvided("JwtSM2 Verify error: " . $e->getMessage(), 0, $e);
         }
     }
 }
